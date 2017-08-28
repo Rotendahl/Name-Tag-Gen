@@ -2,6 +2,11 @@ import csv, os
 from jinja2 import Template
 from subprocess import call
 from PyPDF2 import PdfFileMerger
+import sys
+
+if len(sys.argv) != 2:
+    print("Error \nUsage: generator.py file.csv ")
+
 
 
 """ Setup """
@@ -22,7 +27,7 @@ for i in range(nrOfGroups):
     [trip1, trip2, ... ,tripn], where trip_i has the structure:
     [[{names: [], subGroupNr], [{names: [], subGroupNr] }]
 """
-with open("names.csv",'r') as csvFile:
+with open(sys.argv[1],'r') as csvFile:
     reader = csv.DictReader(csvFile)
     for row in reader:
         group = int(row['group'])
