@@ -6,7 +6,7 @@ from PyPDF2 import PdfFileMerger
 
 """ Setup """
 nrOfGroups = 3
-nrOfSubgroups = 10
+nrOfSubgroups = 13
 groups = []
 html = open('template.html', 'r').read()
 call(["rm", "-rf", "groups"])
